@@ -181,7 +181,7 @@
 (define-key mode-line-major-mode-keymap [header-line]
   (lookup-key mode-line-major-mode-keymap [mode-line]))
 
-(setq-default mode-line-format "")
+(setq-default mode-line-format '(""))
 (setq-default header-line-format
   '(:eval (mode-line-render
    (format-mode-line
