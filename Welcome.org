@@ -1,0 +1,65 @@
+
+                  [[file:logo.svg]]
+
+*Welcome to Emacs*
+ 
+  [[https://www.gnu.org/software/emacs][Emacs]] is an  extensible, customizable, free/libre text  editor — and
+  more. At its core is an interpreter for Emacs Lisp, a dialect of the
+  Lisp programming language with extensions to support text editing.
+
+*Quick help*
+
+  Learn basic keystroke commands ............................ [[elisp:help-with-tutorial][Tutorial]]
+  See an overview of Emacs features at [[https://gnu.org][gnu.org]] ........... [[https://www.gnu.org/software/emacs/tour][Guided Tour]]
+  Get help from Emacs users ............................. [[https://lists.gnu.org/mailman/listinfo/help-gnu-emacs][Mailing list]]
+  Read the extensive documentation ..................... [[info:emacs][Documentation]]
+ 
+*Quick commands*                                 /C: Control, M: alt or ⌘/
+
+  Save ............... =[C-x]= =[C-s]=    Help ..................... =[C-h]=
+  Save as ............ =[C-x]= =[C-w]=    Cancel ................... =[C-g]=
+  Open a new file .... =[C-x]= =[C-f]=    Undo ..................... =[C-/]=
+  Quit ............... =[C-x]= =[C-c]=    Close buffer ......... =[C-x]= =[k]=
+
+
+                       [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
+
+                                 /1/2/
+
+*Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
+
+  Search ................... =[C-s]=    Go to line ......... =[M-g]= =[M-g]=
+  Replace .................. =[M-%]=    Execute .................. =[M-x]=
+  
+  Start of buffer .......... =[M-<]=    End of buffer ............ =[M->]=
+  Start of line ............ =[C-a]=    End of line .............. =[C-e]=
+
+  Mark ................... =[C-spc]=    Copy from mark............ =[M-w]=
+  Kill from mark............ =[C-w]=    Kill from cursor.......... =[C-k]=
+  Paste .................... =[C-y]=    Paste older ........ =[C-y]= =[M-y]= 
+
+*Quick preferences*                                    /[[elisp:(customize-group%20'emacs)][ Full preferences ]]/
+
+ [[elisp:menu-set-font][ Select ]]default font                [[elisp:display-line-numbers-mode][ Toggle ]]line numbers
+ [[elisp:tool-bar-mode][ Toggle ]]tool bar                    [[elisp:toggle-truncate-lines][ Toggle ]]line wrap
+ [[elisp:scroll-bar-mode][ Toggle ]]scroll bar                  [[elisp:blink-cursor-mode][ Toggle ]]blinking cursor
+ [[elisp:menu-bar-mode][ Toggle ]]menu bar                     Select cursor:[[elisp:(set-default%20'cursor-type%20%20'(hbar%20.%202))][ HBar ]]|[[elisp:(set-default%20'cursor-type%20%20'(bar%20.%202))][ VBar ]]|[[elisp:(set-default%20'cursor-type%20'box)][ Box ]]
+
+*Theme selection*                                   /[[elisp:(customize-themes)][ Theme customization ]]/
+  
+  [[elisp:(load-theme%20'adwaita)][adwaita]]      [[elisp:(load-theme%20'deeper-blue)][deeper-blue]]    [[elisp:(load-theme%20'dichromacy)][dichromacy]]     [[elisp:(load-theme%20'leuven)][leuven]]         [[elisp:(load-theme%20'light-blue)][light-blue]]
+  [[elisp:(load-theme%20'manoj-dark)][manoj-dark]]   [[elisp:(load-theme%20'misterioso)][misterioso]]     [[elisp:(load-theme%20'tango)][tango]]          [[elisp:(load-theme%20'tango-dark)][tango-dark]]     [[elisp:(load-theme%20'tsdh-dark)][tsdh-dark]]
+  [[elisp:(load-theme%20'tsdh-light)][tsdh-light]]   [[elisp:(load-theme%20'wheatgrass)][wheatgrass]]     [[elisp:(load-theme%20'whiteboard)][whiteboard]]     [[elisp:(load-theme%20'wombat)][wombat]]         
+  
+
+
+
+
+
+
+
+
+
+
+
+                                 /2/2/
