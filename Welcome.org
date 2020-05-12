@@ -22,8 +22,8 @@
   Open recent ........ =[C-x]= =[C-r]=    Close buffer ......... =[C-x]= =[k]=
   Browse directory ..... =[C-x]= =[d]=    Quit ............... =[C-x]= =[C-c]= 
 
-                       [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
 
+                       [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
                                  /1/2/
 
 *Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
@@ -53,13 +53,13 @@
    
 *Install some packages*                                    /[[elisp:(package-list-packages)][ Package list ]]/
 
+ [[elisp:(package-install%20'magit)][ magit ]]................................. A Git porcelain inside Emacs
+ [[elisp:(package-install%20'projectile)][ projectile ]]............ Manage and navigate projects in Emacs easily
+ [[elisp:(package%20install%20'helm)][ helm ]].................. An Emacs incremental and narrowing framework
+ [[elisp:(package-install%20'company)][ company ]].......................... Modular text completion framework
+ [[elisp:(package-install%20'markdown-mode)][ markdown-mode ]]............... Major mode for Markdown-formatted text
+ [[elisp:(package-install%20'popup)][ popup ]].................................. Visual Popup User Interface
+
   
-  
-
-
-
-
-
-
 
                                  /2/2/
