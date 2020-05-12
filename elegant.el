@@ -36,12 +36,27 @@
   (interactive) (kill-buffer (current-buffer)))
 (global-set-key (kbd "C-x k") 'custom/kill-this-buffer)
 
+(require 'recentf)
+(recentf-mode 1)
+(setq recentf-max-menu-items 10)
+(global-set-key (kbd "C-x C-r") 'recentf-open-files)
+
+;; OSX specific
+;; -------------------------------------------------------------------
+(eval-after-load "flyspell" ;; No button 2 on macbook
+  '(progn
+     (define-key flyspell-mouse-map
+       (kbd "<C-down-mouse-3>") #'flyspell-correct-word)
+     (define-key flyspell-mouse-map
+       (kbd "<C-mouse-3>") 'undefined)))
+
 ;; Appeareance
 ;; -------------------------------------------------------------------
 (set-face-font 'default "Roboto Mono Light 14")
 (setq default-frame-alist
-      (append (list '(width  . 72)
+      (append (list '(width  . 73)
                     '(height . 41)
+                    '(vertical-scroll-bars . nil)
                     '(internal-border-width . 24)
                     '(font . "Roboto Mono Light 14"))))
 (set-frame-parameter
@@ -84,6 +99,13 @@
 (defface face-faded   '((t :foreground "#999999"))   "Faded")
 (defface face-subtle  '((t :background "#f0f0f0"))  "Subtle")
 
+(defface face-display
+  '((t :family "Fira Code" :inherit 'face-faded))  "Display")
+(set-display-table-slot standard-display-table 'truncation
+                        (make-glyph-code ?… 'face-display))
+(set-display-table-slot standard-display-table 'wrap
+                        (make-glyph-code ?↩ 'face-display))
+
 ;; General 
 ;; -------------------------------------------------------------------
 (set-face 'header-line-highlight                          'face-faded)
@@ -112,6 +134,11 @@
 (set-face 'outline-5                                     'face-strong)
 (set-face 'outline-6                                     'face-strong)
 
+;; Flyspell
+;; -------------------------------------------------------------------
+(require 'flyspell)
+(set-face 'flyspell-incorrect                            'face-popout)
+
 ;; Programmation mode
 ;; -------------------------------------------------------------------
 (set-face 'font-lock-comment-face                         'face-faded)
@@ -125,10 +152,40 @@
 (set-face 'font-lock-type-face                          'face-salient)
 (set-face 'font-lock-keyword-face                       'face-salient)
 
+;; Documentation
+;; -------------------------------------------------------------------
+(require 'info)
+(set-face 'info-menu-header                              'face-strong)
+(set-face 'info-header-node                              'face-normal)
+(set-face 'Info-quoted                                   'face-popout)
+(set-face 'info-title-1                                  'face-strong)
+(set-face 'info-title-2                                  'face-strong)
+(set-face 'info-title-3                                  'face-strong)
+(set-face 'info-title-4                                  'face-strong)
+
+;; Speedbar
+;; -------------------------------------------------------------------
+(require 'speedbar)
+(add-hook 'speedbar-mode-hook
+     #'(lambda () (face-remap-add-relative  'default '(:height 120))))
+(setq speedbar-use-images nil)
+(set-face 'speedbar-button-face                           'face-faded)
+(set-face 'speedbar-directory-face                      'face-salient)
+(set-face 'speedbar-file-face                                'default)
+(set-face 'speedbar-highlight-face                       'face-subtle)
+(set-face 'speedbar-selected-face                        'face-popout)
+(set-face 'speedbar-tag-face                              'face-faded)
+(set-face 'speedbar-separator-face                        'face-faded)
+(setq speedbar-frame-parameters
+      '((minibuffer) (width . 32) (border-width . 0)
+        (menu-bar-lines . 0)  (tool-bar-lines . 0)
+        (unsplittable . t)  (left-fringe . 0)))
+
 ;; Interface
 ;; -------------------------------------------------------------------
 (require 'cus-edit)
 (set-face 'widget-field                                  'face-subtle)
+(set-face 'widget-button                                 'face-strong)
 (set-face 'custom-group-subtitle                         'face-strong)
 (set-face 'custom-group-tag                              'face-strong)
 (set-face 'custom-face-tag                               'face-strong)
@@ -137,23 +194,45 @@
 (set-face 'custom-state                                 'face-salient)
 (set-face 'custom-link                                  'face-salient)
 (set-face-attribute 'custom-button nil
-                    :foreground (face-foreground 'face-subtle)
+                    :foreground (face-foreground 'face-faded)
                     :background (face-background 'face-subtle)
                     :box `(:line-width 1
                            :color ,(face-foreground 'face-faded)
-                           :style nil)
-                    :inverse-video nil)
+                           :style nil))
 (set-face-attribute 'custom-button-mouse nil
                     :inherit 'face-subtle
                     :box `(:line-width 1
                            :color ,(face-foreground 'face-subtle)
                            :style nil))
 (set-face-attribute 'custom-button-pressed nil
+                    :foreground "white"
+                    :background (face-foreground 'face-salient)
                     :inherit 'face-salient
                     :box `(:line-width 1
                            :color ,(face-foreground 'face-salient)
                            :style nil)
-                    :inverse-video t)
+                    :inverse-video nil)
+
+
+;; Package
+;; -------------------------------------------------------------------
+(require 'package)
+;; Button face is hardcoded, we have to redefine the relevant function
+(defun package-make-button (text &rest properties)
+  "Insert button labeled TEXT with button PROPERTIES at point.
+PROPERTIES are passed to `insert-text-button', for which this
+function is a convenience wrapper used by `describe-package-1'."
+  (let ((button-text (if (display-graphic-p)
+                         text (concat "[" text "]")))
+        (button-face (if (display-graphic-p)
+                         '(:box `(:line-width 1
+                           :color "#999999":style nil)
+                           :foreground "#999999"
+                           :background "#f0f0f0")
+                       'link)))
+    (apply #'insert-text-button button-text
+           'face button-face 'follow-link t
+           properties)))
 
 ;; Header and mode line
 ;; -------------------------------------------------------------------
