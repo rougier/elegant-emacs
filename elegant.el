@@ -97,11 +97,13 @@
    :underline  'unspecified :overline   'unspecified
    :box        'unspecified :inherit    style))
 
-(defface face-popout  '((t :foreground "#ffa07a"))  "Popout")
-(defface face-strong  '((t :weight regular))        "Strong")
-(defface face-salient '((t :foreground "#00008b")) "Salient")
-(defface face-faded   '((t :foreground "#999999"))   "Faded")
-(defface face-subtle  '((t :background "#f0f0f0"))  "Subtle")
+(defface face-critical '((t :foreground "#ffffff"
+                           :background "#ff6347")) "Critical")
+(defface face-popout   '((t :foreground "#ffa07a"))  "Popout")
+(defface face-strong   '((t :weight regular))        "Strong")
+(defface face-salient  '((t :foreground "#00008b")) "Salient")
+(defface face-faded    '((t :foreground "#999999"))   "Faded")
+(defface face-subtle   '((t :background "#f0f0f0"))  "Subtle")
 
 (defface face-display
   '((t :family "Fira Code" :inherit 'face-faded))  "Display")
@@ -118,6 +120,8 @@
 (set-face 'org-link                                     'face-salient)
 (set-face 'org-verbatim                                 'face-salient)
 (set-face 'bold                                          'face-strong)
+(set-face 'bold-italic                                   'face-strong)
+(set-face 'buffer-menu-buffer                            'face-strong)
 (set-face 'italic                                         'face-faded)
 (set-face 'cursor                                        'face-strong)
 (set-face-attribute 'cursor nil
@@ -126,11 +130,15 @@
 (set-face 'link                                         'face-salient)
 (set-face 'fringe                                         'face-faded)
 (set-face 'isearch                                       'face-strong)
+(set-face 'isearch-fail                                   'face-faded)
 (set-face 'lazy-highlight                                'face-subtle)
 (set-face 'show-paren-match                              'face-popout)
 (set-face 'show-paren-mismatch                           'face-normal)
 (set-face 'shadow                                         'face-faded)
 (set-face 'warning                                       'face-popout)
+(set-face 'error                                       'face-critical)
+(set-face 'fixed-pitch                                       'default)
+(set-face 'fixed-pitch-serif                                 'default)
 (set-face 'outline-1                                     'face-strong)
 (set-face 'outline-2                                     'face-strong)
 (set-face 'outline-3                                     'face-strong)
@@ -138,9 +146,11 @@
 (set-face 'outline-5                                     'face-strong)
 (set-face 'outline-6                                     'face-strong)
 
+
 ;; Flyspell
 ;; -------------------------------------------------------------------
 (require 'flyspell)
+(set-face 'flyspell-duplicate                            'face-popout)
 (set-face 'flyspell-incorrect                            'face-popout)
 
 ;; Programmation mode
@@ -167,6 +177,19 @@
 (set-face 'info-title-3                                  'face-strong)
 (set-face 'info-title-4                                  'face-strong)
 
+;; Message
+;; -------------------------------------------------------------------
+(set-face 'message-cited-text                             'face-faded)
+(set-face 'message-header-cc                                 'default)
+(set-face 'message-header-name                           'face-strong)
+(set-face 'message-header-newsgroups                         'default)
+(set-face 'message-header-other                              'default)
+(set-face 'message-header-subject                       'face-salient)
+(set-face 'message-header-to                                 'default)
+(set-face 'message-header-xheader                            'default)
+(set-face 'message-mml                                       'default)
+(set-face 'message-separator                              'face-faded)
+
 ;; Speedbar
 ;; -------------------------------------------------------------------
 (require 'speedbar)
@@ -184,6 +207,7 @@
       '((minibuffer) (width . 32) (border-width . 0)
         (menu-bar-lines . 0)  (tool-bar-lines . 0)
         (unsplittable . t)  (left-fringe . 0)))
+
 
 ;; Interface
 ;; -------------------------------------------------------------------
@@ -221,6 +245,21 @@
 ;; Package
 ;; -------------------------------------------------------------------
 (require 'package)
+(set-face 'package-description                                'default)
+(set-face 'package-help-section-name                          'default)
+(set-face 'package-name                                  'face-salient)
+(set-face 'package-status-avail-obso                       'face-faded)
+(set-face 'package-status-available                           'default)
+(set-face 'package-status-built-in                       'face-salient)
+(set-face 'package-status-dependency                     'face-salient)
+(set-face 'package-status-disabled                         'face-faded)
+(set-face 'package-status-external                            'default)
+(set-face 'package-status-held                                'default)
+(set-face 'package-status-incompat                         'face-faded)
+(set-face 'package-status-installed                      'face-salient)
+(set-face 'package-status-new                                 'default)
+(set-face 'package-status-unsigned                            'default)
+
 ;; Button face is hardcoded, we have to redefine the relevant function
 (defun package-make-button (text &rest properties)
   "Insert button labeled TEXT with button PROPERTIES at point.
