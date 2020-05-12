@@ -36,6 +36,10 @@
   (interactive) (kill-buffer (current-buffer)))
 (global-set-key (kbd "C-x k") 'custom/kill-this-buffer)
 
+(require 'package)
+(add-to-list 'package-archives
+            '("melpa-stable" . "http://stable.melpa.org/packages/") t)
+
 (require 'recentf)
 (recentf-mode 1)
 (setq recentf-max-menu-items 10)
@@ -144,7 +148,7 @@
 (set-face 'font-lock-comment-face                         'face-faded)
 (set-face 'font-lock-doc-face                             'face-faded)
 (set-face 'font-lock-string-face                         'face-popout)
-(set-face 'font-lock-constant-face                       'face-popout)
+(set-face 'font-lock-constant-face                      'face-salient)
 (set-face 'font-lock-warning-face                        'face-popout)
 (set-face 'font-lock-function-name-face                  'face-strong)
 (set-face 'font-lock-variable-name-face                  'face-strong)
@@ -157,7 +161,7 @@
 (require 'info)
 (set-face 'info-menu-header                              'face-strong)
 (set-face 'info-header-node                              'face-normal)
-(set-face 'Info-quoted                                   'face-popout)
+(set-face 'Info-quoted                                    'face-faded)
 (set-face 'info-title-1                                  'face-strong)
 (set-face 'info-title-2                                  'face-strong)
 (set-face 'info-title-3                                  'face-strong)
