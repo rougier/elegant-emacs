@@ -1,0 +1,38 @@
+*CHAPTER I.*                 /TO DELIVER YOU FROM THE PRELIMINARY TERRORS/.
+
+The preliminary  terror, which  chokes off  most fifth-form  boys from
+even attempting to  learn how to calculate, can be  abolished once for
+all by simply stating what is the meaning–in common-sense terms–of the
+two principal  symbols that are  used in calculating.   These dreadful
+symbols are:
+
+(1) *d* which merely means /“a little bit of.”/
+
+  Thus *dx* means a little  bit of *x*;  or *du*  means a  little bit  of *u*.
+Ordinary mathematicians think  it more polite to say  /“an element of,”/
+instead of /“a little bit of.”/  Just  as you please.  But you will find
+that  these  little  bits  (or  elements)  may  be  considered  to  be
+indefinitely small.
+
+(2) *∫* which is merely a long *S*, and may be called (if you like)
+    /“the sum of.”/
+
+  Thus *∫dx* means the sum of all the little bits of *x*; or *∫dt* means the
+sum of  all the little bits  of *t*.  Ordinary mathematicians  call this
+symbol /“the integral of.”/ Now any fool can see that if *x* is considered
+as made up of a lot of little bits, each of which is called *dx*, if you
+add them all  up together you get  the sum of all the  *dx*'s, (which is
+the same  thing as the whole  of *x*). The word  /“integral”/ simply means
+/“the whole.”/ If  you think of the  duration of time for  one hour, you
+may (if you like)  think of it as cut up into  3600 little bits called
+seconds.  The whole of the 3600 little bits added up together make one
+hour.
+
+  When you see an expression  that begins with this terrifying symbol,
+you  will henceforth  know that  it is  put there  merely to  give you
+instructions that you are now to perform the operation (if you can) of
+totalling up  all the little  bits that  are indicated by  the symbols
+that follow. That's all.
+
+                            /Calculus Made Easy by Silvanus P. Thompson/
+                                     /What one fool can do, another can/.

@@ -9,3 +9,4 @@ and optionally, you'll need the [Fira Code](https://fonts.google.com/specimen/Fi
 **Usage**: `emacs -q -l elegant.el Welcome.org &`
 
 <img src="./screenshot-1.png" width="45%"><img src="./screenshot-2.png" width="45%">
+<img src="./screenshot-3.png" width="45%"><img src="./screenshot-4.png" width="45%">
