@@ -139,6 +139,7 @@
 (set-face 'error                                       'face-critical)
 (set-face 'fixed-pitch                                       'default)
 (set-face 'fixed-pitch-serif                                 'default)
+(set-face 'variable-pitch                                    'default)
 (set-face 'outline-1                                     'face-strong)
 (set-face 'outline-2                                     'face-strong)
 (set-face 'outline-3                                     'face-strong)
@@ -186,9 +187,9 @@
 (set-face 'message-header-newsgroups                         'default)
 (set-face 'message-header-other                              'default)
 (set-face 'message-header-subject                       'face-salient)
-(set-face 'message-header-to                                 'default)
+(set-face 'message-header-to                            'face-salient)
 (set-face 'message-header-xheader                            'default)
-(set-face 'message-mml                                       'default)
+(set-face 'message-mml                                   'face-popout)
 (set-face 'message-separator                              'face-faded)
 
 ;; Speedbar
