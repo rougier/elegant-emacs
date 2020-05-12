@@ -179,6 +179,7 @@
 
 ;; Message
 ;; -------------------------------------------------------------------
+(require 'message)
 (set-face 'message-cited-text                             'face-faded)
 (set-face 'message-header-cc                                 'default)
 (set-face 'message-header-name                           'face-strong)
