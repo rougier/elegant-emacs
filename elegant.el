@@ -65,6 +65,7 @@
                     '(font . "Roboto Mono Light 14"))))
 (set-frame-parameter
  (selected-frame) 'internal-border-width 24)
+
 (setq-default line-spacing 0)
 (set-default 'cursor-type  '(hbar . 2))
 (blink-cursor-mode 0)
@@ -147,12 +148,24 @@
 (set-face 'outline-5                                     'face-strong)
 (set-face 'outline-6                                     'face-strong)
 
-
 ;; Flyspell
 ;; -------------------------------------------------------------------
 (require 'flyspell)
 (set-face 'flyspell-duplicate                            'face-popout)
 (set-face 'flyspell-incorrect                            'face-popout)
+
+;; Diff
+;; -------------------------------------------------------------------
+(require 'diff-mode)
+(set-face 'diff-header                                    'face-faded)
+(set-face 'diff-file-header                              'face-strong)
+(set-face 'diff-context                                      'default)
+(set-face 'diff-removed                                   'face-faded)
+(set-face 'diff-added                                   'face-salient)
+(set-face 'diff-refine-added              '(face-salient face-strong))
+(set-face 'diff-refine-changed                           'face-popout)
+(set-face 'diff-refine-removed                            'face-faded)
+(set-face-attribute 'diff-refine-removed nil :strike-through t)
 
 ;; Programmation mode
 ;; -------------------------------------------------------------------
