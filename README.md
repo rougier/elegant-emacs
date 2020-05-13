@@ -8,5 +8,5 @@ and optionally, you'll also need the [Fira Code](https://fonts.google.com/specim
 
 **Usage**: `emacs -q -l elegant.el Welcome.org &`
 
-<img src="data/screenshot-1.png" width="45%"><img src="data/screenshot-2.png" width="45%">
-<img src="data/screenshot-3.png" width="45%"><img src="data/screenshot-4.png" width="45%">
+<img src="screenshots/screenshot-1.png" width="45%"><img src="screenshots/screenshot-2.png" width="45%">
+<img src="screenshots/screenshot-3.png" width="45%"><img src="screenshots/screenshot-4.png" width="45%">
