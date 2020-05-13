@@ -37,13 +37,13 @@ use of macros.
 Stefan Monnier and Michael Sperber. 2020. Evolution of Emacs Lisp.Proc. ACM Program. Lang.4, HOPL,
 Article 74 (June 2020), 55 pages. https://doi.org/10.1145/3386324
 
--------------------------------------------------------------------------------------------------------
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Authors’ addresses: Stefan Monnier, Université de Montréal, C.P. 6128, succ. centre-ville, Montréal,
 QC, H3C 3J7, Canada,monnier@iro.umontreal.ca; Michael Sperber, Active Group GmbH, Hechinger Str.
 12/1, Tübingen, Germany, sperber@deinprogramm.de
 
--------------------------------------------------------------------------------------------------------
+────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Permission to make digital or hard copies of part or all of this work for personal or classroom use is
 granted without feeprovided that copies are not made or distributed for profit or commercial advantage
