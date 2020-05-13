@@ -1,6 +1,6 @@
 # --------------------------------------------------------------------
 #+TITLE:     Gaussian integral
-#+STARTUP:   content showstars latexpreview indent
+#+STARTUP:   showall showstars latexpreview indent
 # --------------------------------------------------------------------
 
 * Introduction

@@ -82,7 +82,7 @@
 (setq org-startup-with-inline-images "inlineimages")
 (setq org-hide-emphasis-markers t)
 (setq org-confirm-elisp-link-function nil)
-
+(setq org-ellipsis " …")
 
 
 ;; Theme: only 5 different faces, deal with it.
@@ -156,6 +156,8 @@
 (set-face 'org-verbatim                                 'face-salient)
 (set-face 'org-document-title                             'face-faded)
 (set-face 'org-document-info                              'face-faded)
+(set-face 'org-tag                                        'face-faded)
+(set-face 'org-ellipsis                                   'face-faded)
 
 ;; Flyspell
 ;; -------------------------------------------------------------------
