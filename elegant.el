@@ -82,12 +82,14 @@
 (setq org-startup-with-inline-images "inlineimages")
 (setq org-hide-emphasis-markers t)
 (setq org-confirm-elisp-link-function nil)
-     
+
+
+
 ;; Theme: only 5 different faces, deal with it.
 ;; -------------------------------------------------------------------
 (setq frame-background-mode 'light)
-(set-background-color "#ffffff")
-(set-foreground-color "#444444")
+(set-background-color "white")
+(set-foreground-color "#333333")
 
 (defun set-face (face style)
   "Reset a face and make it inherit style."
@@ -118,8 +120,6 @@
 (set-face 'header-line-highlight                          'face-faded)
 (set-face 'region                                        'face-subtle)
 (set-face 'highlight                                     'face-subtle)
-(set-face 'org-link                                     'face-salient)
-(set-face 'org-verbatim                                 'face-salient)
 (set-face 'bold                                          'face-strong)
 (set-face 'bold-italic                                   'face-strong)
 (set-face 'buffer-menu-buffer                            'face-strong)
@@ -149,6 +149,13 @@
 (set-face 'outline-4                                     'face-strong)
 (set-face 'outline-5                                     'face-strong)
 (set-face 'outline-6                                     'face-strong)
+
+;; Org mode
+;; -------------------------------------------------------------------
+(set-face 'org-link                                     'face-salient)
+(set-face 'org-verbatim                                 'face-salient)
+(set-face 'org-document-title                             'face-faded)
+(set-face 'org-document-info                              'face-faded)
 
 ;; Flyspell
 ;; -------------------------------------------------------------------
@@ -320,7 +327,7 @@ function is a convenience wrapper used by `describe-package-1'."
                          '(:box `(:line-width 1
                            :color "#999999":style nil)
                            :foreground "#999999"
-                           :background "#f0f0f0")
+                           :background "#F0F0F0")
                        'link)))
     (apply #'insert-text-button button-text
            'face button-face 'follow-link t
