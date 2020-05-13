@@ -133,6 +133,7 @@
 (set-face 'isearch                                       'face-strong)
 (set-face 'isearch-fail                                   'face-faded)
 (set-face 'lazy-highlight                                'face-subtle)
+(set-face 'trailing-whitespace                           'face-subtle)
 (set-face 'show-paren-match                              'face-popout)
 (set-face 'show-paren-mismatch                           'face-normal)
 (set-face 'shadow                                         'face-faded)
@@ -168,6 +169,30 @@
 (set-face 'diff-refine-changed                           'face-popout)
 (set-face 'diff-refine-removed                            'face-faded)
 (set-face-attribute 'diff-refine-removed nil :strike-through t)
+
+;; Term
+;; -------------------------------------------------------------------
+(require 'term)
+(setq eterm-256color-disable-bold nil)
+(set-face 'term-bold                                     'face-strong)
+(set-face-attribute 'term-color-black nil
+                    :foreground (face-foreground 'default)
+                    :background (face-foreground 'default))
+(set-face-attribute 'term-color-white nil
+                              :foreground "white" :background "white")
+(set-face-attribute 'term-color-blue nil
+                           :foreground "#42A5F5":background "#BBDEFB")
+(set-face-attribute 'term-color-cyan nil
+                          :foreground "#26C6DA" :background "#B2EBF2")
+(set-face-attribute 'term-color-green nil
+                          :foreground "#66BB6A" :background "#C8E6C9")
+(set-face-attribute 'term-color-magenta nil
+                          :foreground "#AB47BC" :background "#E1BEE7")
+(set-face-attribute 'term-color-red nil
+                          :foreground "#EF5350" :background "#FFCDD2")
+(set-face-attribute 'term-color-yellow nil
+                          :foreground "#FFEE58" :background "#FFF9C4")
+
 
 ;; Programmation mode
 ;; -------------------------------------------------------------------
@@ -237,6 +262,8 @@
 (set-face 'custom-group-tag-1                            'face-strong)
 (set-face 'custom-comment                                 'face-faded)
 (set-face 'custom-comment-tag                             'face-faded)
+(set-face 'custom-changed                               'face-salient)
+(set-face 'custom-modified                              'face-salient)
 (set-face 'custom-face-tag                               'face-strong)
 (set-face 'custom-variable-tag                           'face-strong)
 (set-face 'custom-invalid                                'face-popout)
