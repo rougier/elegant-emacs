@@ -1,40 +1,56 @@
-# --------------------------------------------------------------------
-#+TITLE:     Gaussian integral
-#+STARTUP:   showall showstars latexpreview indent
-# --------------------------------------------------------------------
 
-* Introduction
 
-The /Gaussian integral/, also known as the /Euler–Poisson integral/, is
-the integral of the Gaussian function $f(x) = \exp^{-x^2}$ over the
-entire real line. Named after the German mathematician *Carl Friedrich
-Gauss*, the integral is:
+=Evolution of Emacs Lisp=
+STEFAN MONNIER, Université de Montréal, Canada - MICHAEL SPERBER,Active Group GmbH, German
+Shepherd: Brent Hailpern, IBM Research, USA
 
-\[
-\int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi}
-\]
 
-Although no elementary function exists for the error function, as can
-be proven by the Risch algorithm, the Gaussian integral can be solved
-analytically through the methods of multivariable calculus. That is,
-there is no elementary indefinite integral for
+While Emacs  proponents largely  agree that  it is   This has allowed the  language to evolve much more
+the world’s greatest text  editor, it is almost as   rapidly  and substantively  than the  evolution of
+much aLisp machine disguised as an editor. Indeed,   its core  wouldsuggest, by letting  Emacs packages
+one   of   its   chief    appeals   is   that   it   provide   new   surface   syntax   alongside   new
+isprogrammablevia  its  own programming  language.   functions.   In   particular,  EmacsLisp   can  be
+Emacs Lisp is a Lisp in the classic tradition.  In   customized  to look  much  like  Common Lisp,  and
+this  article,  we   present  the  historyof  this   additional   packages  provide   multiple-dispatch
+language over its more than 30 years of evolution.   object   systems,  legible   regular  expressions,
+Its  core  has  remained remarkably  stable  since   programmable      pattern-matching     constructs,
+itsinception in  1985, in  large part  to preserve   generalized variables,and  more.  Still,  the core
+compatibility with  the many  third-party packages   has also evolved, albeit slowly.  Most notably, it
+providing amultitude of  extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
+Lisp has evolved and  continues to do so.Important   of Emacs  Lisp development is closely  tied to the
+aspects of Emacs Lisp have been shaped by concrete   projects  and people  who have  shaped itover  the
+requirements of  the editor it supports  as wellas   years: We document Emacs  Lisp history through its
+implementation  constraints.   These  requirements   predecessors,  Mocklisp  and  MacLisp,  its  early
+led to  the choice  of a  Lisp dialect  as Emacs’s   development up to the  “Emacs schism” and the fork
+language  inthe  first   place,  specifically  its   of Lucid Emacs, the development of XEmacs, and the
+simplicity and dynamic  nature: Loading additional   subsequent rennaissance of Emacs development.     
+Emacs packages or changingthe ones in place occurs
+frequently, and  having to  restart the  editor in   
+order to  re-compile or  re-link the  codewould be   
+unacceptable.   Fulfilling this  requirement in  a   CCS Concepts:• *Social and professional topics* →
+more static language would  have been difficult at   History of programming languages.
+best. One  of Lisp’s chief characteristics  is its   Additional Key Words and Phrases: 
+malleability  through its  uniform syntax  and the   History of programming languages, Lisp, Emacs Lisp
+use of macros.
 
-\[
-\int e^{-x^2} dx = \sqrt{\pi}
-\]
+*ACM Reference Format*:
+Stefan Monnier and Michael Sperber. 2020. Evolution of Emacs Lisp.Proc. ACM Program. Lang.4, HOPL,
+Article 74 (June 2020), 55 pages. https://doi.org/10.1145/3386324
 
-but the definite integral can be evaluated. The definite integral of
-an arbitrary Gaussian function is:
+-------------------------------------------------------------------------------------------------------
 
-\[
-\int_{-\infty}^{+\infty} e^{-a(x+b)^2} dx = \sqrt{\frac{\pi}{a}}
-\]
+Authors’ addresses: Stefan Monnier, Université de Montréal, C.P. 6128, succ. centre-ville, Montréal,
+QC, H3C 3J7, Canada,monnier@iro.umontreal.ca; Michael Sperber, Active Group GmbH, Hechinger Str.
+12/1, Tübingen, Germany, sperber@deinprogramm.de
 
-* Computation by polar coordinates
+-------------------------------------------------------------------------------------------------------
 
-A standard way to compute the Gaussian integral, the idea of which
-goes back to Poisson, is to make use of the property that:
+Permission to make digital or hard copies of part or all of this work for personal or classroom use is
+granted without feeprovided that copies are not made or distributed for profit or commercial advantage
+and that copies bear this notice andthe full citation on the first page. Copyrights for third-party
+components of this work must be honored. For all other uses,contact the owner/author(s).
+©2020 Copyright held by the owner/author(s).2475-1421/2020/6-ART74 https://doi.org/10.1145/3386324
 
- \[
-\left(\int_{-\infty}^{\infty} e^{-x^2}\,dx\right)^2 = \int_{-\infty}^{\infty} e^{-x^2}\,dx \int_{-\infty}^{\infty} e^{-y^2}\,dy = \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty} e^{-(x^2+y^2)}\, dx\,dy
-\]
+
+                    /Proc. ACM Program. Lang., Vol. 4, No. HOPL, Article 74. Publication date: June 2020./
+

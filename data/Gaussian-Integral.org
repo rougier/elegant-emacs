@@ -1,0 +1,40 @@
+# --------------------------------------------------------------------
+#+TITLE:     Gaussian integral
+#+STARTUP:   showall showstars latexpreview indent
+# --------------------------------------------------------------------
+
+* Introduction
+
+The /Gaussian integral/, also known as the /Euler–Poisson integral/, is
+the integral of the Gaussian function $f(x) = \exp^{-x^2}$ over the
+entire real line. Named after the German mathematician *Carl Friedrich
+Gauss*, the integral is:
+
+\[
+\int_{-\infty}^{+\infty} e^{-x^2} dx = \sqrt{\pi}
+\]
+
+Although no elementary function exists for the error function, as can
+be proven by the Risch algorithm, the Gaussian integral can be solved
+analytically through the methods of multivariable calculus. That is,
+there is no elementary indefinite integral for
+
+\[
+\int e^{-x^2} dx = \sqrt{\pi}
+\]
+
+but the definite integral can be evaluated. The definite integral of
+an arbitrary Gaussian function is:
+
+\[
+\int_{-\infty}^{+\infty} e^{-a(x+b)^2} dx = \sqrt{\frac{\pi}{a}}
+\]
+
+* Computation by polar coordinates
+
+A standard way to compute the Gaussian integral, the idea of which
+goes back to Poisson, is to make use of the property that:
+
+ \[
+\left(\int_{-\infty}^{\infty} e^{-x^2}\,dx\right)^2 = \int_{-\infty}^{\infty} e^{-x^2}\,dx \int_{-\infty}^{\infty} e^{-y^2}\,dy = \int_{-\infty}^{\infty}  \int_{-\infty}^{\infty} e^{-(x^2+y^2)}\, dx\,dy
+\]
