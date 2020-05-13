@@ -15,7 +15,7 @@
 ;; GNU General Public License for more details.
 ;;
 ;; You should have received a copy of the GNU General Public License
-;; along with this program.  If not, see <http://www.gnu.org/licenses/>
+;; along with this program. If not, see <http://www.gnu.org/licenses/>
 ;; -------------------------------------------------------------------
 
 
@@ -44,6 +44,8 @@
 (recentf-mode 1)
 (setq recentf-max-menu-items 10)
 (global-set-key (kbd "C-x C-r") 'recentf-open-files)
+(global-set-key (kbd "C-h")
+                (lambda() (interactive)(find-file "Welcome.org")))
 
 ;; OSX specific
 ;; -------------------------------------------------------------------
@@ -83,7 +85,8 @@
 (setq org-hide-emphasis-markers t)
 (setq org-confirm-elisp-link-function nil)
 (setq org-ellipsis " …")
-
+(setq org-link-frame-setup '((file . find-file)))
+      
 
 ;; Theme: only 5 different faces, deal with it.
 ;; -------------------------------------------------------------------
