@@ -16,7 +16,7 @@ language over its more than 30 years of evolution.   object   systems,  legible 
 Its  core  has  remained remarkably  stable  since   programmable      pattern-matching     constructs,
 its inception in 1985, in  large part  to preserve   generalized variables, and  more. Still,  the core
 compatibility with  the many  third-party packages   has also evolved, albeit slowly.  Most notably, it
-providing  amultitude of extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
+providing a multitude of extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
 Lisp has evolved and continues to do so. Important   of Emacs  Lisp development is closely  tied to the
 aspects of Emacs Lisp have been shaped by concrete   projects  and people  who have  shaped itover  the
 requirements of  the editor it supports as well as   years: We document Emacs  Lisp history through its
@@ -50,6 +50,11 @@ granted without feeprovided that copies are not made or distributed for profit o
 and that copies bear this notice andthe full citation on the first page. Copyrights for third-party
 components of this work must be honored. For all other uses,contact the owner/author(s).
 ©2020 Copyright held by the owner/author(s).2475-1421/2020/6-ART74 https://doi.org/10.1145/3386324
+
+
+
+
+
 
 
                     /Proc. ACM Program. Lang., Vol. 4, No. HOPL, Article 74. Publication date: June 2020./
