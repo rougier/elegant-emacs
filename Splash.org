@@ -14,3 +14,14 @@
                          Type​ *[[file:Welcome.org][Ctrl-h]]* for help
 
 
+
+
+
+
+
+
+
+
+
+              /GNU Emacs comes with ABSOLUTELY NO WARRANTY/
+           /Copyright (C) 2019 Free Software Foundation, Inc./
