@@ -1,37 +1,37 @@
 
-
 =Evolution of Emacs Lisp=
 STEFAN MONNIER, Université de Montréal, Canada - MICHAEL SPERBER,Active Group GmbH, German
 Shepherd: Brent Hailpern, IBM Research, USA
 
 
-While Emacs  proponents largely  agree that  it is   This has allowed the  language to evolve much more
-the world’s greatest text  editor, it is almost as   rapidly  and substantively  than the  evolution of
-much a Lisp machine disguised as an editor. Indeed,  its core would suggest, by letting  Emacs packages
-one   of   its   chief    appeals   is   that   it   provide   new   surface   syntax   alongside   new
-is programmable via its own programming  language.   functions.   In   particular,  Emacs Lisp  can  be
-Emacs Lisp is a Lisp in the classic tradition.  In   customized  to look  much  like  Common Lisp,  and
-this  article,  we   present  the  history of this   additional   packages  provide   multiple-dispatch
-language over its more than 30 years of evolution.   object   systems,  legible   regular  expressions,
-Its  core  has  remained remarkably  stable  since   programmable      pattern-matching     constructs,
-its inception in 1985, in  large part  to preserve   generalized variables, and  more. Still,  the core
-compatibility with  the many  third-party packages   has also evolved, albeit slowly.  Most notably, it
-providing a multitude of extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
-Lisp has evolved and continues to do so. Important   of Emacs  Lisp development is closely  tied to the
-aspects of Emacs Lisp have been shaped by concrete   projects  and people  who have  shaped itover  the
-requirements of  the editor it supports as well as   years: We document Emacs  Lisp history through its
-implementation  constraints.   These  requirements   predecessors,  Mocklisp  and  MacLisp,  its  early
-led to  the choice  of a  Lisp dialect  as Emacs’s   development up to the  “Emacs schism” and the fork
-language  in the  first  place,  specifically  its   of Lucid Emacs, the development of XEmacs, and the
-simplicity and dynamic  nature: Loading additional   subsequent rennaissance of Emacs development.     
-Emacs packages or changingthe ones in place occurs
-frequently, and  having to  restart the  editor in   
-order to  re-compile or  re-link the code would be   
-unacceptable.   Fulfilling this  requirement in  a   CCS Concepts:• *Social and professional topics* →
-more static language would  have been difficult at   History of programming languages.
-best. One  of Lisp’s chief characteristics  is its   Additional Key Words and Phrases: 
-malleability  through its  uniform syntax  and the   History of programming languages, Lisp, Emacs Lisp
-use of macros.
+While Emacs  proponents largely  agree that  it is   Fulfilling  this  requirement  in  a  more  static
+the world’s greatest text  editor, it is almost as   language would have been difficult at best. One of
+much    a   Lisp    machine   disguised    as   an   Lisp’s chief  characteristics is  its malleability
+editor. Indeed,  one of its chief  appeals is that   through  its   uniform  syntax  and  the   use  of
+it  is   programmable  via  its   own  programming   macros. This  has allowed  the language  to evolve
+language.   Emacs Lisp  is a  Lisp in  the classic   much  more  rapidly  and  substantively  than  the
+tradition.   In  this   article,  we  present  the   evolution of  its core  would suggest,  by letting
+history  of this  language over  its more  than 30   Emacs   packages   provide  new   surface   syntax
+years  of   evolution.   Its  core   has  remained   alongside  new  functions.  In  particular,  Emacs
+remarkably stable since its  inception in 1985, in   Lisp can  be customized  to look much  like Common
+large part to preserve compatibility with the many   Lisp,    and     additional    packages    provide
+third-party  packages  providing  a  multitude  of   multiple-dispatch object  systems, legible regular
+extensions.   Still, Emacs  Lisp  has evolved  and   expressions,     programmable     pattern-matching
+continues  to do  so. Important  aspects of  Emacs   constructs,     generalized     variables,     and
+Lisp have been shaped  by concrete requirements of   more.  Still, the  core has  also evolved,  albeit
+the editor  it supports as well  as implementation   slowly.   Most notably,  it  acquired support  for
+constraints.  These requirements led to the choice   lexical   scoping.The  timeline   of  Emacs   Lisp
+of a Lisp dialect as Emacs’s language in the first   development is  closely tied  to the  projects and
+place,  specifically  its simplicity  and  dynamic   people  who  have  shaped  itover  the  years:  We
+nature:  Loading  additional   Emacs  packages  or   document   Emacs   Lisp    history   through   its
+changing the ones in  place occurs frequently, and   predecessors,  Mocklisp  and  MacLisp,  its  early
+having  to   restart  the   editor  in   order  to   development up to the  “Emacs schism” and the fork
+re-compile   or   re-link   the  code   would   be   of Lucid Emacs, the development of XEmacs, and the
+unacceptable.                                        subsequent rennaissance of Emacs development.     
+
+                                                  
+CCS Concepts: • *Social and professional topics* → History of programming languages.                 
+Additional Key Words and Phrases: History of programming languages, Lisp, Emacs Lisp
 
 *ACM Reference Format*:
 Stefan Monnier and Michael Sperber. 2020. Evolution of Emacs Lisp.Proc. ACM Program. Lang.4, HOPL,
@@ -39,17 +39,18 @@ Article 74 (June 2020), 55 pages. https://doi.org/10.1145/3386324
 
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-Authors’ addresses: Stefan Monnier, Université de Montréal, C.P. 6128, succ. centre-ville, Montréal,
-QC, H3C 3J7, Canada,monnier@iro.umontreal.ca; Michael Sperber, Active Group GmbH, Hechinger Str.
-12/1, Tübingen, Germany, sperber@deinprogramm.de
+*Authors’ addresses*:  Stefan Monnier, Université de  Montréal, C.P. 6128, succ.  centre-ville, Montréal,
+QC, H3C 3J7, Canada, [[mailto:monnier@iro.umontreal.ca][monnier@iro.umontreal.ca]]; Michael  Sperber, Active Group GmbH, Hechinger Str.12/1,
+Tübingen, Germany, [[mailto:sperber@deinprogramm.de][sperber@deinprogramm.de]].
 
 ───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
-Permission to make digital or hard copies of part or all of this work for personal or classroom use is
-granted without feeprovided that copies are not made or distributed for profit or commercial advantage
-and that copies bear this notice andthe full citation on the first page. Copyrights for third-party
+Permission to make digital or hard copies of part or  all of this work for personal or classroom use is
+granted without fee provided that copies are not made or distributed for profit or commercial advantage
+and that copies  bear this notice and the  full citation on the first page.  Copyrights for third-party
 components of this work must be honored. For all other uses,contact the owner/author(s).
-©2020 Copyright held by the owner/author(s).2475-1421/2020/6-ART74 https://doi.org/10.1145/3386324
+
+(c) 2020 Copyright held by the owner/author(s).2475-1421/2020/6-ART74 https://doi.org/10.1145/3386324
 
 
 
