@@ -7,26 +7,26 @@ Shepherd: Brent Hailpern, IBM Research, USA
 
 While Emacs  proponents largely  agree that  it is   This has allowed the  language to evolve much more
 the world’s greatest text  editor, it is almost as   rapidly  and substantively  than the  evolution of
-much aLisp machine disguised as an editor. Indeed,   its core  wouldsuggest, by letting  Emacs packages
+much a Lisp machine disguised as an editor. Indeed,  its core would suggest, by letting  Emacs packages
 one   of   its   chief    appeals   is   that   it   provide   new   surface   syntax   alongside   new
-isprogrammablevia  its  own programming  language.   functions.   In   particular,  EmacsLisp   can  be
+is programmable via its own programming  language.   functions.   In   particular,  Emacs Lisp  can  be
 Emacs Lisp is a Lisp in the classic tradition.  In   customized  to look  much  like  Common Lisp,  and
-this  article,  we   present  the  historyof  this   additional   packages  provide   multiple-dispatch
+this  article,  we   present  the  history of this   additional   packages  provide   multiple-dispatch
 language over its more than 30 years of evolution.   object   systems,  legible   regular  expressions,
 Its  core  has  remained remarkably  stable  since   programmable      pattern-matching     constructs,
-itsinception in  1985, in  large part  to preserve   generalized variables,and  more.  Still,  the core
+its inception in 1985, in  large part  to preserve   generalized variables, and  more. Still,  the core
 compatibility with  the many  third-party packages   has also evolved, albeit slowly.  Most notably, it
-providing amultitude of  extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
-Lisp has evolved and  continues to do so.Important   of Emacs  Lisp development is closely  tied to the
+providing  amultitude of extensions.  Still, Emacs   acquired support for  lexical scoping.The timeline
+Lisp has evolved and continues to do so. Important   of Emacs  Lisp development is closely  tied to the
 aspects of Emacs Lisp have been shaped by concrete   projects  and people  who have  shaped itover  the
-requirements of  the editor it supports  as wellas   years: We document Emacs  Lisp history through its
+requirements of  the editor it supports as well as   years: We document Emacs  Lisp history through its
 implementation  constraints.   These  requirements   predecessors,  Mocklisp  and  MacLisp,  its  early
 led to  the choice  of a  Lisp dialect  as Emacs’s   development up to the  “Emacs schism” and the fork
-language  inthe  first   place,  specifically  its   of Lucid Emacs, the development of XEmacs, and the
+language  in the  first  place,  specifically  its   of Lucid Emacs, the development of XEmacs, and the
 simplicity and dynamic  nature: Loading additional   subsequent rennaissance of Emacs development.     
 Emacs packages or changingthe ones in place occurs
 frequently, and  having to  restart the  editor in   
-order to  re-compile or  re-link the  codewould be   
+order to  re-compile or  re-link the code would be   
 unacceptable.   Fulfilling this  requirement in  a   CCS Concepts:• *Social and professional topics* →
 more static language would  have been difficult at   History of programming languages.
 best. One  of Lisp’s chief characteristics  is its   Additional Key Words and Phrases: 
@@ -37,13 +37,13 @@ use of macros.
 Stefan Monnier and Michael Sperber. 2020. Evolution of Emacs Lisp.Proc. ACM Program. Lang.4, HOPL,
 Article 74 (June 2020), 55 pages. https://doi.org/10.1145/3386324
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Authors’ addresses: Stefan Monnier, Université de Montréal, C.P. 6128, succ. centre-ville, Montréal,
 QC, H3C 3J7, Canada,monnier@iro.umontreal.ca; Michael Sperber, Active Group GmbH, Hechinger Str.
 12/1, Tübingen, Germany, sperber@deinprogramm.de
 
-────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+───────────────────────────────────────────────────────────────────────────────────────────────────────────────────────────
 
 Permission to make digital or hard copies of part or all of this work for personal or classroom use is
 granted without feeprovided that copies are not made or distributed for profit or commercial advantage
