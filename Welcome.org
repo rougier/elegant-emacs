@@ -23,6 +23,7 @@
   Browse directory ..... =[C-x]= =[d]=    Quit ............... =[C-x]= =[C-c]= 
 
 
+
                        [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
                                  /1/2/
 
@@ -61,5 +62,6 @@
  [[elisp:(package-install%20'popup)][ popup ]].................................. Visual popup user interface
 
   
+
                        [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
                                  /2/2/

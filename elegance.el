@@ -1,4 +1,4 @@
-;; A very minimal but elegant theme
+;; A very minimal but elegant and consistent theme
 ;; Copyright 2020 Nicolas P. Rougier
 ;;
 ;; This file is not part of GNU Emacs.
@@ -27,7 +27,6 @@
   (setq org-ellipsis " …")
   (setq org-link-frame-setup '((file . find-file))))
 ;; -------------------------------------------------------------------
-
 
 ;; Default font and frame size
 (set-face-font 'default "Roboto Mono Light 14")
@@ -65,48 +64,77 @@
    :underline  'unspecified :overline   'unspecified
    :box        'unspecified :inherit    style))
 
-
-;; Default face
-(set-background-color "#ffffff")
-(set-foreground-color "#333333")
-(setq frame-background-mode 'light)
-
-(defface face-critical '((t :foreground "#ffffff"
-                            :background "#ff6347"))
+;; A theme is fully defined by these six faces 
+(defface face-critical nil
 "Critical face is for information that requires immediate action
 or attention. It should be of high constrast when compared to
 other faces. This can be realized (for example) by setting an
 intense background color, typically a shade of red.")
 
-(defface face-popout '((t :foreground "#ffa07a"))
+(defface face-popout nil
 "Popout face is used for information that need to attract
 attention. To achieve such effect, the hue of the face has to be
 sufficiently different from other faces such that it attracts
 attention through the popout effect.")
 
-(defface face-strong '((t :weight regular))
+(defface face-strong nil
 "Strong face is used for information of a structural nature like
 for example titles, keywords, directory, etc. It has to be the
 same color as the default color and only the weight differs by
 one level (e.g., light/regular or regular/bold).")
 
-(defface face-salient '((t :foreground "#00008b"))
+(defface face-salient nil
 "Salient face is used for information that are more important
 than the others while being of the same nature. It is made by
 using a different hue with approximately the same intensity as
 the default face.")
 
-(defface face-faded '((t :foreground "#999999"))
+(defface face-faded nil
 "Faded face is for information that are less important than the
 others while being of the same nature. It is made by using the
 same hue as the default but with a smaller intensity than the
 default. It can be used for comments, secondary information and
 also replace italic (which is generally abused anyway).")
 
-(defface face-subtle '((t :background "#f0f0f0"))
+(defface face-subtle nil
 "Subtle face is used to suggest a physical area on the screen
 without disturbing the reading of information. This can be made
 by setting a very light background color that is barely perceptible.")
+
+
+;; Light theme (default)
+(defun elegance-light ()
+    (setq frame-background-mode 'light)
+    (set-background-color "#ffffff")
+    (set-foreground-color "#333333")
+    (set-face-attribute 'face-critical nil :foreground "#ffffff"
+                                           :background "#ff6347")
+    (set-face-attribute 'face-popout nil :foreground "#ffa07a")
+    (set-face-attribute 'face-strong nil :foreground "333333"
+                                         :weight 'regular)
+    (set-face-attribute 'face-salient nil :foreground "#00008b")
+    (set-face-attribute 'face-faded nil :foreground "#999999")
+    (set-face-attribute 'face-subtle nil :background "#f0f0f0"))
+
+;; Dark theme
+(defun elegance-dark ()
+    (setq frame-background-mode 'dark)
+    (set-background-color "#3f3f3f")
+    (set-foreground-color "#dcdccc")
+    (set-face-attribute 'face-critical nil :foreground "#385f38"
+                                           :background "#f8f893")
+    (set-face-attribute 'face-popout nil :foreground "#f0dfaf")
+    (set-face-attribute 'face-strong nil :foreground "#dcdccc"
+                                         :weight 'regular)
+    (set-face-attribute 'face-salient nil :foreground "#dca3a3")
+    (set-face-attribute 'face-faded nil :foreground "#777767")
+    (set-face-attribute 'face-subtle nil :background "#4f4f4f"))
+
+
+;; Set theme: Some faces do not inherit from elegance faces, this will
+;;            break things if theme is changed afterwards. See for
+;;            example cursor, mode-line or package button.
+(elegance-light)
 
 
 ;; Structural
@@ -124,21 +152,20 @@ by setting a very light background color that is barely perceptible.")
 
 ;; Modeline
 (set-face-attribute 'mode-line nil
-		    :height .85
-                    :foreground (face-background 'default)
-                    :background (face-foreground 'default)
-		    :box `(:line-width 2
-                           :color ,(face-foreground 'default)
+		    :height 1.0
+                    :foreground (face-foreground 'default)
+                    :background (face-background 'face-subtle)
+		    :box `(:line-width 1
+                           :color ,(face-background 'face-subtle)
 			   :style nil))
-
 (set-face 'mode-line-highlight 'face-popout)
 (set-face 'mode-line-emphasis  'face-strong)
-(set-face 'mode-line-buffer-id 'face-strong)
+(set-face-attribute 'mode-line-buffer-id nil :weight 'regular)
 (set-face-attribute 'mode-line-inactive nil
-		    :height .85
+		    :height 1.0
                     :foreground (face-foreground 'face-faded)
                     :background (face-background 'face-subtle)
-		    :box `(:line-width 2
+		    :box `(:line-width 1
                            :color ,(face-background 'face-subtle)
 			   :style nil))
 
@@ -222,12 +249,14 @@ by setting a very light background color that is barely perceptible.")
                              :color ,(face-foreground 'face-faded)
                              :style nil))
   (set-face-attribute 'custom-button-mouse nil
-                      :inherit 'face-subtle
+                      :foreground (face-foreground 'default)
+                      :background (face-background 'face-subtle)
+;;                      :inherit 'face-subtle
                       :box `(:line-width 1
                              :color ,(face-foreground 'face-subtle)
                              :style nil))
   (set-face-attribute 'custom-button-pressed nil
-                      :foreground "white"
+                      :foreground (face-background 'default)
                       :background (face-foreground 'face-salient)
                       :inherit 'face-salient
                       :box `(:line-width 1
@@ -317,50 +346,52 @@ function is a convenience wrapper used by `describe-package-1'."
                          :foreground "#FFEE58" :background "#FFF9C4"))
 
 
-;; Header and mode line
-(set-face-attribute 'header-line nil
-		    :height 140
-                    :underline t
-                    :underline "black"
-		    :weight 'light
-                    :foreground "black"
-		    :background "white"
-                    :box `(:line-width 3 :color "white" :style nil))
-(set-face-attribute 'mode-line nil
-                    :height 10
-                    :underline "black"
-                    :background "white"
-		    :foreground "white"
-                    :box nil)
-(set-face 'mode-line-inactive 'mode-line)
-(set-face 'mode-line-buffer-id 'default)
-(set-face 'header-line-highlight 'face-faded)
+;; ;; Header and mode line
+;; (set-face-attribute 'header-line nil
+;; 		    :height 140
+;;                     :underline t
+;;                     :underline (face-foreground 'default)
+;; 		    :weight 'light
+;;                     :foreground (face-foreground 'default)
+;; 		    :background (face-background 'default)
+;;                     :box `(:line-width 3
+;;                            :color ,(face-background 'default)
+;;                            :style nil))
+;; (set-face-attribute 'mode-line nil
+;;                     :height 10
+;;                     :underline (face-foreground 'default)
+;;                     :background (face-foreground 'default)
+;; 		    :foreground (face-foreground 'default)
+;;                     :box nil)
+;; (set-face 'mode-line-inactive 'mode-line)
+;; (set-face 'mode-line-buffer-id 'default)
+;; (set-face 'header-line-highlight '(face-faded header-line))
 
-(defun mode-line-render (left right)
-  "Return a string of `window-width' length containing left, and
-   right aligned respectively."
-  (let* ((available-width (- (window-total-width) (length left) )))
-    (format (format "%%s %%%ds" available-width) left right)))
-(define-key mode-line-major-mode-keymap [header-line]
-  (lookup-key mode-line-major-mode-keymap [mode-line]))
+;; (defun mode-line-render (left right)
+;;   "Return a string of `window-width' length containing left, and
+;;    right aligned respectively."
+;;   (let* ((available-width (- (window-total-width) (length left) )))
+;;     (format (format "%%s %%%ds" available-width) left right)))
+;; (define-key mode-line-major-mode-keymap [header-line]
+;;   (lookup-key mode-line-major-mode-keymap [mode-line]))
 
-(setq-default mode-line-format '(""))
-(setq-default header-line-format
-  '(:eval (mode-line-render
-   (format-mode-line
-    (list
-     (propertize "☰"
-                 'face `(:weight regular)
-                 'mouse-face 'header-line-highlight
-                 'help-echo  "Major mode menu"
-                 'local-map   mode-line-major-mode-keymap)
-     " %b "
-     '(:eval (if (and buffer-file-name (buffer-modified-p))
-                 (propertize "(modified)"
-              'face `(:foreground ,(face-foreground 'face-faded)))))))
-   (format-mode-line
-    (propertize "%3l:%2c "
-	'face `(:foreground ,(face-foreground 'face-faded)))))))
+;; (setq-default mode-line-format '(""))
+;; (setq-default header-line-format
+;;   '(:eval (mode-line-render
+;;    (format-mode-line
+;;     (list
+;;      (propertize "☰"
+;;                  'face `(:weight regular)
+;;                  'mouse-face 'header-line-highlight
+;;                  'help-echo  "Major mode menu"
+;;                  'local-map   mode-line-major-mode-keymap)
+;;      " %b "
+;;      '(:eval (if (and buffer-file-name (buffer-modified-p))
+;;                  (propertize "(modified)"
+;;               'face `(:foreground ,(face-foreground 'face-faded)))))))
+;;    (format-mode-line
+;;     (propertize "%3l:%2c "
+;; 	'face `(:foreground ,(face-foreground 'face-faded)))))))
 
 
 (provide 'elegance)
