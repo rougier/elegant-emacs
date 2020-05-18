@@ -9,10 +9,9 @@
 
 
                   [[file:data/logo.svg]]
-                             [[https://www.gnu.org][www.gnu.org]]
+                            [[https://www.gnu.org][ www.gnu.org ]]
                         *GNU Emacs* version 26.3
                          Type[[file:Welcome.org][ Ctrl-h ]]for help
-
 
 
 

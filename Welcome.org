@@ -1,4 +1,5 @@
 
+
                   [[file:data/logo.svg]]
 
 *Welcome to Emacs*                                /GNU Emacs version 26.3/
@@ -22,10 +23,8 @@
   Open recent ........ =[C-x]= =[C-r]=    Close buffer ......... =[C-x]= =[k]=
   Browse directory ..... =[C-x]= =[d]=    Quit ............... =[C-x]= =[C-c]= 
 
-
-
-                       [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
                                  /1/2/
+
 
 *Other commands*                                     /[[info:emacs#Key%2520Bindings][ Other key bindings ]]/
 
@@ -60,8 +59,6 @@
  [[elisp:(package-install%20'company)][ company ]].......................... Modular text completion framework
  [[elisp:(package-install%20'markdown-mode)][ markdown-mode ]]............... Major mode for Markdown-formatted text
  [[elisp:(package-install%20'popup)][ popup ]].................................. Visual popup user interface
-
   
 
-                       [[elisp:(kill-buffer%20(current-buffer))][ *— Close this buffer —* ]]
                                  /2/2/

@@ -1,6 +1,8 @@
+                    /Proc. ACM Program. Lang., Vol. 4, No. HOPL, Article 74. Publication date: June 2020./
 
 =Evolution of Emacs Lisp=
-STEFAN MONNIER, Université de Montréal, Canada - MICHAEL SPERBER,Active Group GmbH, German
+*STEFAN MONNIER*, Université de Montréal, Canada
+*MICHAEL SPERBER*,Active Group GmbH, German
 Shepherd: Brent Hailpern, IBM Research, USA
 
 
@@ -28,7 +30,6 @@ changing the ones in  place occurs frequently, and   predecessors,  Mocklisp  an
 having  to   restart  the   editor  in   order  to   development up to the  “Emacs schism” and the fork
 re-compile   or   re-link   the  code   would   be   of Lucid Emacs, the development of XEmacs, and the
 unacceptable.                                        subsequent rennaissance of Emacs development.     
-
                                                   
 CCS Concepts: • *Social and professional topics* → History of programming languages.                 
 Additional Key Words and Phrases: History of programming languages, Lisp, Emacs Lisp
@@ -52,11 +53,4 @@ components of this work must be honored. For all other uses,contact the owner/au
 
 (c) 2020 Copyright held by the owner/author(s).2475-1421/2020/6-ART74 https://doi.org/10.1145/3386324
 
-
-
-
-
-
-
-                    /Proc. ACM Program. Lang., Vol. 4, No. HOPL, Article 74. Publication date: June 2020./
 
