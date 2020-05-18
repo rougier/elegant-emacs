@@ -183,11 +183,11 @@ background color that is barely perceptible."
                                 :underline (face-foreground 'default))
   (set-face-attribute 'mode-line nil
                       :height 10
-                      :underline "white"
-                      :overline "white"
-                      :box nil
-                      :foreground (face-foreground 'default)
-                      :background (face-foreground 'default))
+                      :underline (face-foreground 'default)
+                      :overline nil
+                      :box nil 
+                      :foreground (face-background 'default)
+                      :background (face-background 'default))
   (set-face 'mode-line-inactive                            'mode-line)
   
   ;; Mode line at bottom
@@ -294,7 +294,7 @@ background color that is barely perceptible."
     (with-eval-after-load 'cus-edit (set-button-faces)))
 
 ;; Set theme
-(elegance-light)
+(elegance-dark)
 
 ;; Structural
 (set-face 'bold                                          'face-strong)
