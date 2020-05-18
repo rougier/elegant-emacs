@@ -15,7 +15,7 @@
 ;;
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program. If not, see <http://www.gnu.org/licenses/>
-
+(setq gc-cons-threshold (* 100 1024 1024))
 (setq inhibit-startup-screen t)
 (setq inhibit-startup-echo-area-message t)
 (setq inhibit-startup-message t)
@@ -35,9 +35,6 @@
 (setq uniquify-buffer-name-style 'forward)
 
 (save-place-mode 1)
-
-(ido-mode t)
-(setq ido-enable-flex-matching t)
 
 (global-set-key (kbd "C-z") 'undo)
 (global-set-key (kbd "C-x C-x") 'execute-extended-command)
