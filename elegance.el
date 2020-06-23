@@ -59,7 +59,7 @@
 (setq visible-bell t)
 (setq ring-bell-function 'ignore)
 
-;; No tootlips
+;; No Tooltips
 (tooltip-mode 0)
 
 ;; Paren mode is part of the theme
