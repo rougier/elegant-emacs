@@ -99,7 +99,7 @@
 ;;; -------------------------------------------------------------------
 (defgroup elegance nil
   "Faces for the elegance theme"
-  :prefix "face-"
+  :prefix "elegance-face-"
   :group 'faces)
 ;;; -------------------------------------------------------------------
 
