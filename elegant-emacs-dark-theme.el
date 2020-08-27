@@ -72,4 +72,3 @@
 
 
 ;;; elegant-emacs-dark-theme.el ends here
-
