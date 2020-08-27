@@ -309,7 +309,7 @@ background color that is barely perceptible."
 
 ;; Documentation
 ;;; -------------------------------------------------------------------
-(set-face 'info-header-node                            'face-normal)
+'(set-face 'info-header-node                            'face-normal)
 (set-face 'Info-quoted                                  'face-faded)
 (set-face 'info-title-1                                'face-strong)
 (set-face 'info-title-2                                'face-strong)
