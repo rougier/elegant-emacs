@@ -33,13 +33,7 @@
 
 
 
-;; Font and frame size
-(set-face-font 'default "Roboto Mono Light 14")
-(setq default-frame-alist
-      (append (list '(width  . 72) '(height . 40)
-                    '(vertical-scroll-bars . nil)
-                    '(internal-border-width . 24)
-                    '(font . "Roboto Mono Light 14"))))
+;; Frame size
 (set-frame-parameter (selected-frame)
                      'internal-border-width 24)
 
@@ -48,9 +42,6 @@
 
 ;; Underline line at descent position, not baseline position
 (setq x-underline-at-descent-line t)
-
-;; No ugly button for checkboxes
-(setq widget-image-enable nil)
 
 ;; Line cursor and no blink
 (set-default 'cursor-type  '(bar . 1))
@@ -90,9 +81,6 @@
 (defgroup elegance nil
   "Faces for the elegance theme"
   :prefix "face-")
-
-;; Do not show prefix when displaying the elegance group
-(setq custom-unlispify-remove-prefixes t)
 
 (defface face-critical nil
 "Critical face is for information that requires immediate action.
