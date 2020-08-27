@@ -60,9 +60,9 @@
 ;; No fringe but nice glyphs for truncated and wrapped lines
 (fringe-mode '(0 . 0))
 (set-display-table-slot standard-display-table 'truncation
-                        (make-glyph-code ?… 'fallback))
+                        (make-glyph-code ?…))
 (set-display-table-slot standard-display-table 'wrap
-                        (make-glyph-code ?↩ 'fallback))
+                        (make-glyph-code ?↩))
 (set-display-table-slot standard-display-table 'selective-display
                         (string-to-vector " …"))
 
