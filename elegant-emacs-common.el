@@ -68,20 +68,6 @@
 ;;; -------------------------------------------------------------------
 
 
-;;; No fringe but nice glyphs for truncated and wrapped lines
-;;; -------------------------------------------------------------------
-(fringe-mode '(0 . 0))
-(defface fallback '((t :family "Fira Code Light"
-                       :inherit 'face-faded)) "Fallback")
-(set-display-table-slot standard-display-table 'truncation
-                        (make-glyph-code ?… 'fallback))
-(set-display-table-slot standard-display-table 'wrap
-                        (make-glyph-code ?↩ 'fallback))
-(set-display-table-slot standard-display-table 'selective-display
-                        (string-to-vector " …"))
-;;; -------------------------------------------------------------------
-
-
 ;;; When we set a face, we take care of removing any previous settings
 ;;; -------------------------------------------------------------------
 (defun set-face (face style)
