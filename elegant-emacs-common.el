@@ -1,4 +1,4 @@
-;;; elegant-emacs-light-theme.el --- A very minimal but elegant and consistent theme
+;;; elegant-emacs-common.el --- A very minimal but elegant and consistent theme
 ;;; Copyright (C) 2020 Nicolas P. Rougier
 ;;; -------------------------------------------------------------------
 ;;; Author: Nicolas P. Rougier
