@@ -157,8 +157,7 @@ background color that is barely perceptible."
        (format-mode-line (list
          (propertize "☰" 'face `(:inherit mode-line-buffer-id)
                          'help-echo "Mode(s) menu"
-                         'mouse-face 'mode-line-highlight
-                         'local-map   mode-line-major-mode-keymap)
+                         'mouse-face 'mode-line-highlight)
          " %b "
          (if (and buffer-file-name (buffer-modified-p))
              (propertize "(modified)" 'face `(:inherit face-faded)))))
