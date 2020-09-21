@@ -1,4 +1,4 @@
-;;; elegant-emacs-light-theme.el --- A very minimal but elegant and consistent theme
+;;; elegant-emacs-dark-theme.el --- A very minimal but elegant and consistent theme
 ;;; Copyright (C) 2020 Nicolas P. Rougier
 ;;; -------------------------------------------------------------------
 ;;; Author: Nicolas P. Rougier
@@ -22,7 +22,7 @@
 ;;; General Public License for more details.
 ;;;
 ;;; You should have received a copy of the GNU General Public License
-;;; along with this program. If not, see <http://www.gnu.org/licenses/>
+;;; along with this program. If not, see <https://www.gnu.org/licenses/>
 ;;; -------------------------------------------------------------------
 ;;; Commentary:
 ;;; This theme offers an almost vanilla yet elegant Emacs experience
