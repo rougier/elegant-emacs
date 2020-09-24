@@ -22,7 +22,7 @@
 ;;; General Public License for more details.
 ;;;
 ;;; You should have received a copy of the GNU General Public License
-;;; along with this program. If not, see <https://www.gnu.org/licenses/>
+;;; along with this program. If not, see <http://www.gnu.org/licenses/>
 ;;; -------------------------------------------------------------------
 ;;; Commentary:
 ;;; This theme offers an almost vanilla yet elegant Emacs experience
@@ -70,7 +70,7 @@
 
 ;;; When we set a face, we take care of removing any previous settings
 ;;; -------------------------------------------------------------------
-(defun elegant-emacs-common-set-face (face style)
+(defun set-face (face style)
   "Reset a FACE and make it inherit STYLE."
   (set-face-attribute face nil
    :foreground 'unspecified :background 'unspecified
@@ -142,12 +142,12 @@ background color that is barely perceptible."
 ;;; Mode line rendering
 ;;; -------------------------------------------------------------------
 ;;; This line below makes things a bit faster
-;;; (set-fontset-font "fontset-default"  '(#x2600 . #x26ff) "Fira Code 16")
+(set-fontset-font "fontset-default"  '(#x2600 . #x26ff) "Fira Code 16")
 
 (define-key mode-line-major-mode-keymap [header-line]
   (lookup-key mode-line-major-mode-keymap [mode-line]))
 
-(defun elegant-emacs-common-mode-line-render (left right)
+(defun mode-line-render (left right)
   "Function to render the modeline LEFT to RIGHT."
   (let* ((available-width (- (window-width) (length left) )))
     (format (format "%%s %%%ds" available-width) left right)))
@@ -184,7 +184,7 @@ background color that is barely perceptible."
 
 ;;; Modeline
 ;;; -------------------------------------------------------------------
-(defun elegant-emacs-common-set-modeline-faces ()
+(defun set-modeline-faces ()
   "Mode line at top."
   (set-face 'header-line                                 'face-strong)
   (set-face-attribute 'header-line nil
@@ -193,7 +193,7 @@ background color that is barely perceptible."
                       :height 10
                       :underline (face-foreground 'default)
                       :overline nil
-                      :box nil
+                      :box nil 
                       :foreground (face-background 'default)
                       :background (face-background 'default))
   (set-face 'mode-line-inactive                            'mode-line)
@@ -210,7 +210,7 @@ background color that is barely perceptible."
 
 ;;; Buttons
 ;;; -------------------------------------------------------------------
-(defun elegant-emacs-common-set-button-faces ()
+(defun set-button-faces ()
   "Set button faces."
   (set-face-attribute 'custom-button nil
                       :foreground (face-foreground 'face-faded)
@@ -241,55 +241,55 @@ background color that is barely perceptible."
 
 ;; Structural
 ;; -------------------------------------------------------------------
-'(set-face 'bold                                          'face-strong)
-'(set-face 'italic                                         'face-faded)
-'(set-face 'bold-italic                                   'face-strong)
-'(set-face 'region                                        'face-subtle)
-'(set-face 'highlight                                     'face-subtle)
-'(set-face 'fixed-pitch                                       'default)
-'(set-face 'fixed-pitch-serif                                 'default)
-'(set-face 'variable-pitch                                    'default)
-'(set-face 'cursor                                            'default)
+(set-face 'bold                                          'face-strong)
+(set-face 'italic                                         'face-faded)
+(set-face 'bold-italic                                   'face-strong)
+(set-face 'region                                        'face-subtle)
+(set-face 'highlight                                     'face-subtle)
+(set-face 'fixed-pitch                                       'default)
+(set-face 'fixed-pitch-serif                                 'default)
+(set-face 'variable-pitch                                    'default)
+(set-face 'cursor                                            'default)
 ;;; -------------------------------------------------------------------
 
 
 ;; Semantic
 ;;; -------------------------------------------------------------------
-'(set-face 'shadow                                         'face-faded)
-'(set-face 'success                                      'face-salient)
-'(set-face 'warning                                       'face-popout)
-'(set-face 'error                                       'face-critical)
+(set-face 'shadow                                         'face-faded)
+(set-face 'success                                      'face-salient)
+(set-face 'warning                                       'face-popout)
+(set-face 'error                                       'face-critical)
 ;;; -------------------------------------------------------------------
 
 
 ;; General
 ;;; -------------------------------------------------------------------
-'(set-face 'buffer-menu-buffer                            'face-strong)
-'(set-face 'minibuffer-prompt                             'face-strong)
-'(set-face 'link                                         'face-salient)
-'(set-face 'fringe                                         'face-faded)
-'(set-face 'isearch                                       'face-strong)
-'(set-face 'isearch-fail                                   'face-faded)
-'(set-face 'lazy-highlight                                'face-subtle)
-'(set-face 'trailing-whitespace                           'face-subtle)
-'(set-face 'show-paren-match                              'face-popout)
-'(set-face 'show-paren-mismatch                           'face-normal)
-'(set-face-attribute 'tooltip nil                         :height 0.85)
+(set-face 'buffer-menu-buffer                            'face-strong)
+(set-face 'minibuffer-prompt                             'face-strong)
+(set-face 'link                                         'face-salient)
+(set-face 'fringe                                         'face-faded)
+(set-face 'isearch                                       'face-strong)
+(set-face 'isearch-fail                                   'face-faded)
+(set-face 'lazy-highlight                                'face-subtle)
+(set-face 'trailing-whitespace                           'face-subtle)
+(set-face 'show-paren-match                              'face-popout)
+(set-face 'show-paren-mismatch                           'face-normal)
+(set-face-attribute 'tooltip nil                         :height 0.85)
 ;;; -------------------------------------------------------------------
 
 
 ;; Programmation mode
 ;;; -------------------------------------------------------------------
-'(set-face 'font-lock-comment-face                         'face-faded)
-'(set-face 'font-lock-doc-face                             'face-faded)
-'(set-face 'font-lock-string-face                         'face-popout)
-'(set-face 'font-lock-constant-face                      'face-salient)
-'(set-face 'font-lock-warning-face                        'face-popout)
-'(set-face 'font-lock-function-name-face                  'face-strong)
-'(set-face 'font-lock-variable-name-face                  'face-strong)
-'(set-face 'font-lock-builtin-face                       'face-salient)
-'(set-face 'font-lock-type-face                          'face-salient)
-'(set-face 'font-lock-keyword-face                       'face-salient)
+(set-face 'font-lock-comment-face                         'face-faded)
+(set-face 'font-lock-doc-face                             'face-faded)
+(set-face 'font-lock-string-face                         'face-popout)
+(set-face 'font-lock-constant-face                      'face-salient)
+(set-face 'font-lock-warning-face                        'face-popout)
+(set-face 'font-lock-function-name-face                  'face-strong)
+(set-face 'font-lock-variable-name-face                  'face-strong)
+(set-face 'font-lock-builtin-face                       'face-salient)
+(set-face 'font-lock-type-face                          'face-salient)
+(set-face 'font-lock-keyword-face                       'face-salient)
 ;;; -------------------------------------------------------------------
 
 
@@ -381,7 +381,7 @@ background color that is barely perceptible."
 
 ;; Button function (hardcoded)
 ;;; -------------------------------------------------------------------
-  (defun elegant-emacs-common-package-make-button (text &rest properties)
+  (defun package-make-button (text &rest properties)
     "Insert button labeled TEXT with button PROPERTIES at point.
 PROPERTIES are passed to `insert-text-button', for which this
 function is a convenience wrapper used by `describe-package-1'."
