@@ -1,13 +1,12 @@
-;;; elegant-emacs-common.el --- A very minimal but elegant and consistent theme
-;;; Copyright (C) 2020 Nicolas P. Rougier
+;;; elegant.el --- A very minimal but elegant and consistent theme
+;;; Copyright (C) 2020 Nicolas P. Rougier and Nicolò Zorzetto
 ;;; -------------------------------------------------------------------
-;;; Author: Nicolas P. Rougier
+;;; Authors: Nicolas P. Rougier and Nicolò Zorzetto
+;;; -------------------------------------------------------------------
 ;;; URL: https://github.com/rougier/elegant-emacs
 ;;; -------------------------------------------------------------------
-;;; Version: 0.1
+;;; Version: 1
 ;;; Package-Requires: ((emacs "25.1"))
-;;; -------------------------------------------------------------------
-;;; This theme was packaged by Nicolò Zorzetto <github.com/NicoloZorzetto>
 ;;; -------------------------------------------------------------------
 ;;; This file is not part of GNU Emacs.
 ;;;
@@ -586,7 +585,7 @@ function is a convenience wrapper used by `describe-package-1'."
 
 ;;; Provide commons for the elegant-emacs-themes
 ;;; -------------------------------------------------------------------
-(provide 'elegant-emacs-common)
+(provide 'elegant)
 ;;; -------------------------------------------------------------------
 
-;;; elegant-emacs-common.el ends here
+;;; elegant.el ends here
