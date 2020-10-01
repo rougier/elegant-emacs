@@ -1,13 +1,12 @@
-;;; elegant-emacs-dark-theme.el --- A very minimal but elegant and consistent theme
-;;; Copyright (C) 2020 Nicolas P. Rougier
+;;; elegant-dark-theme.el --- A very minimal but elegant and consistent theme
+;;; Copyright (C) 2020 Nicolas P. Rougier and Nicolò Zorzetto
 ;;; -------------------------------------------------------------------
-;;; Author: Nicolas P. Rougier
+;;; Authors: Nicolas P. Rougier and Nicolò Zorzetto
+;;; -------------------------------------------------------------------
 ;;; URL: https://github.com/rougier/elegant-emacs
 ;;; -------------------------------------------------------------------
-;;; Version: 0.1
+;;; Version: 1
 ;;; Package-Requires: ((emacs "25.1"))
-;;; -------------------------------------------------------------------
-;;; This theme was packaged by Nicolò Zorzetto <github.com/NicoloZorzetto>
 ;;; -------------------------------------------------------------------
 ;;; This file is not part of GNU Emacs.
 ;;;
@@ -32,7 +31,7 @@
 
 ;;; Theme definition
 ;;; -------------------------------------------------------------------
-(deftheme elegant-emacs-dark
+(deftheme elegant-dark
   "A simple yet elegant theme for emacs.")
 ;;; -------------------------------------------------------------------
 
@@ -67,9 +66,9 @@
 
 ;;; Provide the elegant-emacs-dark theme
 ;;; -------------------------------------------------------------------
-(provide-theme 'elegant-emacs-dark)
+(provide-theme 'elegant-dark)
 ;;; -------------------------------------------------------------------
 
 
-;;; elegant-emacs-dark-theme.el ends here
+;;; elegant-dark-theme.el ends here
 
