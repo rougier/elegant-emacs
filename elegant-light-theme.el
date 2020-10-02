@@ -37,8 +37,8 @@
 
 ;;; Require elegant-emacs-common
 ;;; -------------------------------------------------------------------
-; (load "~/.emacs.d/elegant-emacs/elegant-emacs-common.el")
-(require 'elegant-emacs-common)
+;; (load "~/.emacs.d/elegant/elegant.el")
+(require 'elegant)
 ;;; -------------------------------------------------------------------
 
 

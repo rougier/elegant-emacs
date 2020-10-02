@@ -40,6 +40,12 @@
                      'internal-border-width 24)
 ;;; -------------------------------------------------------------------
 
+;;; Line spacing, can be 0 for code and 1 or 2 for text
+;;; -------------------------------------------------------------------
+(setq-default line-spacing 0)
+(setq x-underline-at-descent-line t)
+(setq widget-image-enable nil)
+;;; -------------------------------------------------------------------
 
 ;;; Line cursor and no blink
 ;;; -------------------------------------------------------------------
@@ -162,7 +168,7 @@ background color that is barely perceptible."
          (if (and buffer-file-name (buffer-modified-p))
              (propertize "(modified)" 'face `(:inherit face-faded)))))
        (format-mode-line
-        (propertize "%4l:%2c  " 'face `(:inherit face-faded)))))))
+        (propertize "%4l:%2c" 'face `(:inherit face-faded)))))))
 ;;; -------------------------------------------------------------------
 
 
