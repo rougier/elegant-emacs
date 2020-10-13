@@ -495,7 +495,7 @@ function is a convenience wrapper used by `describe-package-1'."
   (set-face 'org-agenda-filter-effort                     'face-faded)
   (set-face 'org-agenda-filter-regexp                     'face-faded)
   (set-face 'org-agenda-filter-tags                       'face-faded)
-  (set-face 'org-agenda-property-face                     'face-faded)
+  ;; fixes issue #18 (set-face 'org-agenda-property-face                     'face-faded)
   (set-face 'org-agenda-restriction-lock                  'face-faded)
   (set-face 'org-agenda-structure                        'face-faded))
 
