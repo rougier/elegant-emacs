@@ -549,7 +549,7 @@ function is a convenience wrapper used by `describe-package-1'."
   (set-face 'org-scheduled-today                          'face-faded)
   (set-face 'org-sexp-date                                'face-faded)
   (set-face 'org-special-keyword                          'face-faded)
-  (set-face 'org-table                                    'face-faded)
+  (set-face 'org-table                                    'default)
   (set-face 'org-tag                                      'face-faded)
   (set-face 'org-tag-group                                'face-faded)
   (set-face 'org-target                                   'face-faded)
