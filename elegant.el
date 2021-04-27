@@ -536,6 +536,7 @@ function is a convenience wrapper used by `describe-package-1'."
 '(org-verbatim                                 'face-faded)
 '(org-verse                                    'face-faded)
 '(org-warning                                'face-popout)
+(setq org-hide-emphasis-markers t)
 ;;; -------------------------------------------------------------------
 
 
