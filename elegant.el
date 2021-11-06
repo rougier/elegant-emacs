@@ -154,8 +154,9 @@ background color that is barely perceptible."
 
 (defun mode-line-render (left right)
   "Function to render the modeline LEFT to RIGHT."
-  (let* ((available-width (- (window-width) (length left) )))
-    (format (format "%%s %%%ds" available-width) left right)))
+  (concat left
+          (propertize " " 'display `(space :align-to (- right ,(length right))))
+          right))
 (setq-default mode-line-format
      '((:eval
        (mode-line-render
