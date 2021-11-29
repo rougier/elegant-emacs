@@ -35,11 +35,15 @@
 (set-face-font 'default "Roboto Mono Light 14")
 (setq default-frame-alist
       (append (list '(width  . 72) '(height . 40)
+                    '(ns-transparent-titlebar . t)
                     '(vertical-scroll-bars . nil)
                     '(internal-border-width . 24)
                     '(font . "Roboto Mono Light 14"))))
 (set-frame-parameter (selected-frame)
                      'internal-border-width 24)
+;; Transparent title bar
+(setq ns-use-proxy-icon nil)
+(setq frame-title-format nil)
 
 ;; Line spacing, can be 0 for code and 1 or 2 for text
 (setq-default line-spacing 0)
